@@ -1,5 +1,5 @@
 body{
-  background-color: white;
+  background-color: black;
 }
 .navbar{
   display: flex;
@@ -12,6 +12,7 @@ body{
   top: 0px;
   right: 0px;
   left: 0px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .flex-2{
   display: flex;
@@ -33,12 +34,42 @@ button:hover{
   border-radius: 20px;
   padding:  10px 20px 10px 20px;
   margin: 10px;
+  margin-top: 60px;
+  border: 1px solid rgb(255, 255, 179);
+  box-shadow: 1.5px 1.5px 1px 1px rgb(255, 255, 179);
+  color: white;
+}
+.home{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  gap: 50px;
+  justify-content: center;
+}
+.home .card{
+  padding: 20px 0px 20px 30px;
+  width: 150px;
 }
 .card{
   background: none;
   padding: 5px;
   border-radius: 10px;
   border: 1.5px solid rgb(255, 255, 179);
+  width: 200px;
+  color: white;
+}
+.card button{
+  background-color: white;
+}
+.series, .movies{
+  display: grid;
+  grid-template-rows: 200px 200px 200px 200px ;
+  grid-template-columns: 180px 180px 180px 180px;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  display: none;
 }
 
 .footer{
@@ -69,5 +100,25 @@ button:hover{
 .grid{
   display: flex;
   gap: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  html, body{
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .series, .movies{
+    display: grid;
+    grid-template-rows: 200px 200px ;
+    grid-template-columns: 180px 180px;
+    justify-content: center;
+    align-items: center;
+  }
+  .App-footer{
+    display: none;
+  }
+  
+  
 }
 

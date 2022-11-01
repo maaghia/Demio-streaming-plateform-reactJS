@@ -1,9 +1,10 @@
+import React from "react";
 export default function Card(){
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure>
-            <img></img>
+            <img src="assets/movie.PNG" alt=""></img>
           </figure>
           <div className="card-body">
             <h2 className="card-title"> movie title</h2>
