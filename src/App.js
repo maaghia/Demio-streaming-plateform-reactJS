@@ -7,9 +7,20 @@ import Home from './components/Home';
 import Movies  from './components/Movies';
 import Series  from './components/Series';
 import Spinner from './components/Spinner';
+import React,{useState, useEffect} from "react";
+import FetchData from "./components/FetchData";
 
 function App() {
+  const [programs, setPrograms] = useState([])
+  const fetchData = async () => {
+    const fetchedData = await FetchData();
+    setPrograms(fetchedData)
+     
+  }
   
+  useEffect(() => {
+    fetchData()
+    },[]);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,11 +29,13 @@ function App() {
       </header>
       
       <body>
-        <div><Home/> </div>
-        <div><Spinner/></div>
-
+      <div> 
+         <Home/>
+         <Spinner/>
+         <Movies programs={programs}/>
+         <Series programs={programs} />
+        </div>
       </body>
-
       <footer className="App-footer">
         <Footer/>
       </footer>

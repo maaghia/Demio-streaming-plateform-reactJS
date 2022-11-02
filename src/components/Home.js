@@ -1,6 +1,7 @@
 import React from "react";
 import Movies from './Movies';
 import Series from './Series';
+import Card from './Card'
 
 
 export default function Home(){
