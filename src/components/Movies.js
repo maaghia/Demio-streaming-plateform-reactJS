@@ -2,7 +2,6 @@ import React from "react";
 import Card from './Card';
 
 function Movies ({programs}){
-    console.log('programs', programs)
     return (
         <div className='movies'>
             {programs.filter(program => program.programType === 'movie' ).map((movie)=> {

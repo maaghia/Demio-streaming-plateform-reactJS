@@ -8,7 +8,6 @@ const  FetchData = async () => {
         const info = await res.json();
         
         let entries = info.entries;
-        console.log('entries', entries)
         return entries;
     } catch (error) {
         console.log(error);

@@ -8,8 +8,8 @@ export default function Navbar(){
             <a className="btn btn-ghost normal-case text-xl">DEMO Streaming</a>
         </div>
         <div className="flex-2">
-            <button class="btn btn-login">Log in</button>
-            <button class="btn btn-accent btn-trial">Start your free trial</button>
+            <button className="btn btn-login">Log in</button>
+            <button className="btn btn-accent btn-trial">Start your free trial</button>
         </div>
         </div>
         

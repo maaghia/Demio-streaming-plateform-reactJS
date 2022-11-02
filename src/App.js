@@ -27,15 +27,12 @@ function App() {
        <div><Navbar/></div> 
        <div> <UnderNavbar/></div>
       </header>
-      
-      <body>
-      <div> 
+      <main> 
          <Home/>
          <Spinner/>
          <Movies programs={programs}/>
          <Series programs={programs} />
-        </div>
-      </body>
+      </main>
       <footer className="App-footer">
         <Footer/>
       </footer>
