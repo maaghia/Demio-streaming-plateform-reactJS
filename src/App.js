@@ -1,14 +1,15 @@
 import './App.css';
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import UnderNavbar from './components/UnderNavbar';
-import Card from './components/Card';
 import Home from './components/Home';
+
+import Card from './components/Card';
+import HomePage from './components/HomePage';
 import Movies  from './components/Movies';
 import Series  from './components/Series';
 import Spinner from './components/Spinner';
 import React,{useState, useEffect} from "react";
 import FetchData from "./components/FetchData";
+import { Route, Routes } from 'react-router-dom';
+import NotFound from './components/NotFound';
 
 function App() {
   const [programs, setPrograms] = useState([])
@@ -22,21 +23,17 @@ function App() {
     fetchData()
     },[]);
   return (
-    <div className="App">
-      <header className="App-header">
-       <div><Navbar/></div> 
-       <div> <UnderNavbar/></div>
-      </header>
-      <main> 
-         <Home/>
-         <Spinner/>
-         <Movies programs={programs}/>
-         <Series programs={programs} />
-      </main>
-      <footer className="App-footer">
-        <Footer/>
-      </footer>
-    </div>
+    <>
+    <Routes>
+      <Route element={<Home/>}>
+      <Route path='/' element={<HomePage/>} />
+      <Route path='/Movies' element={<Movies/>} />
+      <Route path='/Series' element={<Series/>} />
+      </Route>
+      <Route path='*' element={<NotFound/>}/>
+    </Routes>
+    </>
+
   );
 }
 
