@@ -26,6 +26,7 @@ function App() {
       <Route path='/' element={<HomePage/>} />
       <Route path='/Movies' element={<Movies programs={programs}/>} />
       <Route path='/Series' element={<Series programs={programs}/>} />
+      <Route path='/Spinner' element={<Spinner/>}/>
       </Route>
       <Route path='*' element={<NotFound/>}/>
     </Routes>
