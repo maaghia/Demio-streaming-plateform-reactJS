@@ -2,11 +2,12 @@ import React from "react";
 import Movies from './Movies';
 import Series from './Series';
 import Card from './Card'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 export default function Home(){
-
+    let navigate = useNavigate();
     return (
         <div className="home">
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -17,7 +18,7 @@ export default function Home(){
                 </div>
                 <h2 className="card-title">movies</h2>
                 <div className="card-actions justify-end">
-                <button className="btn btn-primary">
+                <button className="btn btn-primary" onClick={()=>{navigate('/Movies')}} >
                     <Link to="/Movies" id="link">Select</Link>
                 </button>
                 </div>

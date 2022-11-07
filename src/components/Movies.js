@@ -1,7 +1,7 @@
 import React from "react";
 import Card from './Card';
 
-function Movies ({programs}){
+function Movies ({programs}){ 
     return (
         <div className='movies'>
             {programs.filter(program => program.programType === 'movie' ).map((movie)=> {

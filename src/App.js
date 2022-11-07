@@ -1,7 +1,5 @@
 import './App.css';
 import Home from './components/Home';
-
-import Card from './components/Card';
 import HomePage from './components/HomePage';
 import Movies  from './components/Movies';
 import Series  from './components/Series';
@@ -16,7 +14,6 @@ function App() {
   const fetchData = async () => {
     const fetchedData = await FetchData();
     setPrograms(fetchedData)
-     
   }
   
   useEffect(() => {
@@ -27,8 +24,8 @@ function App() {
     <Routes>
       <Route element={<Home/>}>
       <Route path='/' element={<HomePage/>} />
-      <Route path='/Movies' element={<Movies/>} />
-      <Route path='/Series' element={<Series/>} />
+      <Route path='/Movies' element={<Movies programs={programs}/>} />
+      <Route path='/Series' element={<Series programs={programs}/>} />
       </Route>
       <Route path='*' element={<NotFound/>}/>
     </Routes>
