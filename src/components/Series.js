@@ -1,14 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import { DataContext } from "../context/DataContext";
 import Card from './Card';
 
-function Series ({programs}){
+export default function Series (){
+    const { series } = useContext(DataContext);
     return (
         <div className='series'>
-            {programs.filter(program => program.programType === 'series' ).map((series)=> {
-            return (
             <Card program={series}/>
-        )})}
         </div>
     )
 }
-  export default Series;

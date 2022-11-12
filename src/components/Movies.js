@@ -1,13 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import { DataContext } from "../context/DataContext";
 import Card from './Card';
 
-function Movies ({programs}){ 
+function Movies (){ 
+    const { movies } = useContext(DataContext);
     return (
         <div className='movies'>
-            {programs.filter(program => program.programType === 'movie' ).map((movie)=> {
-            return (
-            <Card program={movie}/>
-        )})}
+            <Card program={movies}/>
         </div>
     )
 }
